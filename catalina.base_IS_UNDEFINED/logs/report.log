@@ -1,0 +1,302 @@
+11:50:50.844 [main] ERROR o.s.b.l.LoggingApplicationListener - Cannot set level: info		 for 'null'
+11:50:51.023 [main] INFO  com.credochain.UmsApplicationTests - Starting UmsApplicationTests on CTPLLT078.local with PID 1590 (started by divya in /Users/divya/credo/ums)
+11:50:51.024 [main] INFO  com.credochain.UmsApplicationTests - No active profile set, falling back to default profiles: default
+11:50:51.086 [main] INFO  o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3b0fe47a: startup date [Tue Oct 02 11:50:51 IST 2018]; root of context hierarchy
+11:50:51.576 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+11:50:53.252 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+11:50:53.395 [cluster-ClusterId{value='5bb30e45c5ad830636c1e624', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSecurityException: Exception authenticating MongoCredential{mechanism=null, userName='divya', source='ums', password=<hidden>, mechanismProperties={}}
+	at com.mongodb.connection.SaslAuthenticator.wrapInMongoSecurityException(SaslAuthenticator.java:157)
+	at com.mongodb.connection.SaslAuthenticator.access$200(SaslAuthenticator.java:37)
+	at com.mongodb.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:66)
+	at com.mongodb.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:44)
+	at com.mongodb.connection.SaslAuthenticator.doAsSubject(SaslAuthenticator.java:162)
+	at com.mongodb.connection.SaslAuthenticator.authenticate(SaslAuthenticator.java:44)
+	at com.mongodb.connection.DefaultAuthenticator.authenticate(DefaultAuthenticator.java:32)
+	at com.mongodb.connection.InternalStreamConnectionInitializer.authenticateAll(InternalStreamConnectionInitializer.java:109)
+	at com.mongodb.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:46)
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:116)
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:113)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.mongodb.MongoCommandException: Command failed with error 18: 'Authentication failed.' on server localhost:27017. The full response is { "ok" : 0.0, "errmsg" : "Authentication failed.", "code" : 18, "codeName" : "AuthenticationFailed" }
+	at com.mongodb.connection.CommandHelper.createCommandFailureException(CommandHelper.java:170)
+	at com.mongodb.connection.CommandHelper.receiveCommandResult(CommandHelper.java:123)
+	at com.mongodb.connection.CommandHelper.executeCommand(CommandHelper.java:32)
+	at com.mongodb.connection.SaslAuthenticator.sendSaslStart(SaslAuthenticator.java:117)
+	at com.mongodb.connection.SaslAuthenticator.access$000(SaslAuthenticator.java:37)
+	at com.mongodb.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:50)
+	... 9 common frames omitted
+11:50:53.544 [main] WARN  o.s.w.c.s.GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'moduleController': Unsatisfied dependency expressed through field 'moduleService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'moduleServiceImpl': Unsatisfied dependency expressed through field 'commonUtilities'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.credochain.utils.CommonUtilities' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+11:50:53.555 [main] INFO  o.s.b.a.l.AutoConfigurationReportLoggingInitializer - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+11:50:53.667 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field commonUtilities in com.credochain.service.impl.ModuleServiceImpl required a bean of type 'com.credochain.utils.CommonUtilities' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.credochain.utils.CommonUtilities' in your configuration.
+
+11:50:53.668 [main] ERROR o.s.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@3b2cf7ab] to prepare test instance [com.credochain.UmsApplicationTests@440e3ce6]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'moduleController': Unsatisfied dependency expressed through field 'moduleService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'moduleServiceImpl': Unsatisfied dependency expressed through field 'commonUtilities'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.credochain.utils.CommonUtilities' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 26 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'moduleServiceImpl': Unsatisfied dependency expressed through field 'commonUtilities'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.credochain.utils.CommonUtilities' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 44 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.credochain.utils.CommonUtilities' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1493)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1104)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 57 common frames omitted
+11:52:18.942 [main] ERROR o.s.b.l.LoggingApplicationListener - Cannot set level: info		 for 'null'
+11:52:19.059 [main] INFO  com.credochain.UmsApplicationTests - Starting UmsApplicationTests on CTPLLT078.local with PID 1593 (started by divya in /Users/divya/credo/ums)
+11:52:19.060 [main] INFO  com.credochain.UmsApplicationTests - No active profile set, falling back to default profiles: default
+11:52:19.126 [main] INFO  o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3b0fe47a: startup date [Tue Oct 02 11:52:19 IST 2018]; root of context hierarchy
+11:52:19.587 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+11:52:21.283 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+11:52:21.387 [cluster-ClusterId{value='5bb30e9dc5ad8306391c6266', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSecurityException: Exception authenticating MongoCredential{mechanism=null, userName='divya', source='ums', password=<hidden>, mechanismProperties={}}
+	at com.mongodb.connection.SaslAuthenticator.wrapInMongoSecurityException(SaslAuthenticator.java:157)
+	at com.mongodb.connection.SaslAuthenticator.access$200(SaslAuthenticator.java:37)
+	at com.mongodb.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:66)
+	at com.mongodb.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:44)
+	at com.mongodb.connection.SaslAuthenticator.doAsSubject(SaslAuthenticator.java:162)
+	at com.mongodb.connection.SaslAuthenticator.authenticate(SaslAuthenticator.java:44)
+	at com.mongodb.connection.DefaultAuthenticator.authenticate(DefaultAuthenticator.java:32)
+	at com.mongodb.connection.InternalStreamConnectionInitializer.authenticateAll(InternalStreamConnectionInitializer.java:109)
+	at com.mongodb.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:46)
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:116)
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:113)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.mongodb.MongoCommandException: Command failed with error 18: 'Authentication failed.' on server localhost:27017. The full response is { "ok" : 0.0, "errmsg" : "Authentication failed.", "code" : 18, "codeName" : "AuthenticationFailed" }
+	at com.mongodb.connection.CommandHelper.createCommandFailureException(CommandHelper.java:170)
+	at com.mongodb.connection.CommandHelper.receiveCommandResult(CommandHelper.java:123)
+	at com.mongodb.connection.CommandHelper.executeCommand(CommandHelper.java:32)
+	at com.mongodb.connection.SaslAuthenticator.sendSaslStart(SaslAuthenticator.java:117)
+	at com.mongodb.connection.SaslAuthenticator.access$000(SaslAuthenticator.java:37)
+	at com.mongodb.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:50)
+	... 9 common frames omitted
+11:52:21.576 [main] WARN  o.s.w.c.s.GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'moduleController': Unsatisfied dependency expressed through field 'moduleService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'moduleServiceImpl': Unsatisfied dependency expressed through field 'commonUtilities'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.credochain.utils.CommonUtilities' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+11:52:21.587 [main] INFO  o.s.b.a.l.AutoConfigurationReportLoggingInitializer - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+11:52:21.680 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field commonUtilities in com.credochain.service.impl.ModuleServiceImpl required a bean of type 'com.credochain.utils.CommonUtilities' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.credochain.utils.CommonUtilities' in your configuration.
+
+11:52:21.682 [main] ERROR o.s.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@3b2cf7ab] to prepare test instance [com.credochain.UmsApplicationTests@fd53053]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'moduleController': Unsatisfied dependency expressed through field 'moduleService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'moduleServiceImpl': Unsatisfied dependency expressed through field 'commonUtilities'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.credochain.utils.CommonUtilities' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 26 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'moduleServiceImpl': Unsatisfied dependency expressed through field 'commonUtilities'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.credochain.utils.CommonUtilities' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 44 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.credochain.utils.CommonUtilities' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1493)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1104)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 57 common frames omitted
+11:53:50.016 [main] ERROR o.s.b.l.LoggingApplicationListener - Cannot set level: info		 for 'null'
+11:53:50.172 [main] INFO  com.credochain.UmsApplicationTests - Starting UmsApplicationTests on CTPLLT078.local with PID 1601 (started by divya in /Users/divya/credo/ums)
+11:53:50.173 [main] INFO  com.credochain.UmsApplicationTests - No active profile set, falling back to default profiles: default
+11:53:50.219 [main] INFO  o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3b0fe47a: startup date [Tue Oct 02 11:53:50 IST 2018]; root of context hierarchy
+11:53:50.714 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+11:53:52.361 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+11:53:52.461 [cluster-ClusterId{value='5bb30ef8c5ad830641d47994', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSecurityException: Exception authenticating MongoCredential{mechanism=null, userName='divya', source='ums', password=<hidden>, mechanismProperties={}}
+	at com.mongodb.connection.SaslAuthenticator.wrapInMongoSecurityException(SaslAuthenticator.java:157)
+	at com.mongodb.connection.SaslAuthenticator.access$200(SaslAuthenticator.java:37)
+	at com.mongodb.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:66)
+	at com.mongodb.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:44)
+	at com.mongodb.connection.SaslAuthenticator.doAsSubject(SaslAuthenticator.java:162)
+	at com.mongodb.connection.SaslAuthenticator.authenticate(SaslAuthenticator.java:44)
+	at com.mongodb.connection.DefaultAuthenticator.authenticate(DefaultAuthenticator.java:32)
+	at com.mongodb.connection.InternalStreamConnectionInitializer.authenticateAll(InternalStreamConnectionInitializer.java:109)
+	at com.mongodb.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:46)
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:116)
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:113)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.mongodb.MongoCommandException: Command failed with error 18: 'Authentication failed.' on server localhost:27017. The full response is { "ok" : 0.0, "errmsg" : "Authentication failed.", "code" : 18, "codeName" : "AuthenticationFailed" }
+	at com.mongodb.connection.CommandHelper.createCommandFailureException(CommandHelper.java:170)
+	at com.mongodb.connection.CommandHelper.receiveCommandResult(CommandHelper.java:123)
+	at com.mongodb.connection.CommandHelper.executeCommand(CommandHelper.java:32)
+	at com.mongodb.connection.SaslAuthenticator.sendSaslStart(SaslAuthenticator.java:117)
+	at com.mongodb.connection.SaslAuthenticator.access$000(SaslAuthenticator.java:37)
+	at com.mongodb.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:50)
+	... 9 common frames omitted
+11:53:53.325 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/addModule],methods=[POST]}" onto public com.credochain.utils.models.ServiceResponse<com.credochain.utils.models.ModuleResponse> com.credochain.controller.ModuleController.addModule(com.credochain.utils.models.ServiceRequest<com.credochain.utils.models.AddModuleRequest>)
+11:53:53.328 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updateModule],methods=[POST]}" onto public com.credochain.utils.models.ServiceResponse<com.credochain.utils.models.ModuleResponse> com.credochain.controller.ModuleController.updateModule(com.credochain.utils.models.ServiceRequest<com.credochain.utils.models.ModuleStatusRequest>)
+11:53:53.328 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getModules],methods=[GET]}" onto public com.credochain.utils.models.ServiceResponse<com.credochain.utils.models.ModuleResponse> com.credochain.controller.ModuleController.getModule()
+11:53:53.330 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getRoles],methods=[GET]}" onto public com.credochain.utils.models.ServiceResponse<com.credochain.utils.models.RoleResponse> com.credochain.controller.RoleController.getRoles()
+11:53:53.330 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/addRoles],methods=[POST]}" onto public com.credochain.utils.models.ServiceResponse<com.credochain.utils.models.RoleResponse> com.credochain.controller.RoleController.addRole(com.credochain.utils.models.ServiceRequest<com.credochain.utils.models.AddRoleRequest>)
+11:53:53.330 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updateRoles],methods=[POST]}" onto public com.credochain.utils.models.ServiceResponse<com.credochain.utils.models.RoleResponse> com.credochain.controller.RoleController.updateRole(com.credochain.utils.models.ServiceRequest<com.credochain.utils.models.AddRoleRequest>)
+11:53:53.331 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getRoleServices],methods=[GET]}" onto public com.credochain.utils.models.ServiceResponse<com.credochain.user.model.Roles> com.credochain.controller.RoleController.getRoleServices()
+11:53:53.331 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getMenuByRole],methods=[GET]}" onto public com.credochain.utils.models.ServiceResponse<com.credochain.user.model.Roles> com.credochain.controller.RoleController.getMenuByRole()
+11:53:53.332 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/addService],methods=[POST]}" onto public com.credochain.utils.models.ServiceResponse<com.credochain.utils.models.AddServiceResponse> com.credochain.controller.ServiceController.addService(com.credochain.utils.models.ServiceRequest<com.credochain.utils.models.AddServiceRequest>)
+11:53:53.332 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updateService],methods=[POST]}" onto public com.credochain.utils.models.ServiceResponse<com.credochain.utils.models.AddServiceResponse> com.credochain.controller.ServiceController.updateService(com.credochain.utils.models.ServiceRequest<com.credochain.utils.models.ServiceStatusRequest>)
+11:53:53.333 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/login],methods=[POST]}" onto public com.credochain.utils.models.ServiceResponse<com.credochain.user.model.Services> com.credochain.controller.SessionController.login(com.credochain.utils.models.ServiceRequest<com.credochain.user.model.Services>)
+11:53:53.333 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/logout],methods=[POST]}" onto public com.credochain.utils.models.ServiceResponse<com.credochain.user.model.Services> com.credochain.controller.SessionController.logout(com.credochain.utils.models.ServiceRequest<com.credochain.user.model.Services>)
+11:53:53.334 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/unblockUser],methods=[POST]}" onto public com.credochain.utils.models.ServiceResponse<com.credochain.user.model.Services> com.credochain.controller.SessionController.unblockUser(com.credochain.utils.models.ServiceRequest<com.credochain.user.model.Services>)
+11:53:53.335 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/generateToken],methods=[GET]}" onto public com.credochain.utils.models.ServiceResponse<com.credochain.utils.models.TokenResponse> com.credochain.controller.TokenController.generateToken()
+11:53:53.336 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/validateToken],methods=[POST]}" onto public com.credochain.utils.models.ServiceResponse<com.credochain.utils.models.TokenResponse> com.credochain.controller.TokenController.validateToken(com.credochain.utils.models.ServiceRequest<com.credochain.utils.models.TokenRequest>)
+11:53:53.337 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/addUser],methods=[POST]}" onto public com.credochain.utils.models.ServiceResponse<com.credochain.user.model.Services> com.credochain.controller.UserController.addUser(com.credochain.utils.models.ServiceRequest<com.credochain.user.model.Services>)
+11:53:53.338 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getUsers],methods=[GET]}" onto public com.credochain.utils.models.ServiceResponse<com.credochain.user.model.Services> com.credochain.controller.UserController.getUsers()
+11:53:53.338 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updateUser],methods=[POST]}" onto public com.credochain.utils.models.ServiceResponse<com.credochain.user.model.Services> com.credochain.controller.UserController.updateUser(com.credochain.utils.models.ServiceRequest<com.credochain.user.model.Services>)
+11:53:53.343 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+11:53:53.344 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+11:53:53.344 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+11:53:53.354 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+11:53:53.355 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+11:53:53.529 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+11:53:54.214 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@3b0fe47a: startup date [Tue Oct 02 11:53:50 IST 2018]; root of context hierarchy
+11:53:54.288 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+11:53:54.288 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+11:53:54.332 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+11:53:54.648 [main] INFO  o.s.w.s.v.f.FreeMarkerConfigurer - ClassTemplateLoader for Spring macros added to FreeMarker configuration
+11:53:54.801 [main] INFO  o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase 2147483647
+11:53:54.801 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+11:53:54.835 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+11:53:54.892 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+11:53:55.312 [main] INFO  com.credochain.UmsApplicationTests - Started UmsApplicationTests in 5.919 seconds (JVM running for 6.942)
+11:53:55.364 [Thread-2] INFO  o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@3b0fe47a: startup date [Tue Oct 02 11:53:50 IST 2018]; root of context hierarchy
+11:53:55.366 [Thread-2] INFO  o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase 2147483647

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<configuration debug="true" scan="true" scanPeriod="10 seconds">
+	<appender name="REPORT"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${catalina.base}/logs/report.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${catalina.base}/logs/report.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<totalSizeCap>50MB</totalSizeCap>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	<logger name="com.cointribe" additivity="false" level="INFO">
+		<appender-ref ref="REPORT" />
+	</logger>
+	<root level="INFO">
+		<appender-ref ref="REPORT" />
+	</root>
+</configuration>
